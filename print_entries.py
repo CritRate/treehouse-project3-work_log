@@ -17,14 +17,19 @@ def print_entries(entries):
         print(f'Time spent: {entry["time"]}')
         print(f'Notes: {entry["notes"]}\n')
         print(f'Result {index + 1} of {len(entries)}\n')
+        # first result
         option_without_prev = ('[N]ext, [E]dit, [D]elete, ' +
                                '[R]eturn to search menu\n')
+        # result between first and last, but not last
         option_with_prev = ('[P]revious, [N]ext, [E]dit, [D]elete, ' +
                             '[R]eturn to search menu\n')
+        # last result
         option_without_next = ('[P]revious, [E]dit, [D]elete, ' +
                                '[R]eturn to search menu\n')
+        # only one result
         option_without_next_prev = ('[E]dit, [D]elete, ' +
                                     '[R]eturn to search menu\n')
+
         if index == 0 and len(entries) == 1:
             option = input(option_without_next_prev)
         elif index == 0:
